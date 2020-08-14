@@ -9,7 +9,7 @@ print("This is a calculator program.")
 num1 = input("Enter the first number: ")
 num1 = int(num1)
 operation = input("Enter the operator(* is multiply, / is divide, + is add, - is subtract, ^ is exponent): ")
-if not(operation == toBin or operation == fromBin):
+if not(operation == "toBin" or operation == "fromBin"):
 	num2 = input("Enter the second number: ")
 	num2 = int(num2)
 
@@ -29,10 +29,26 @@ def exp(a, b):
 	return a ** b
 
 def toBin(a):
+	bian = bin(a)
+	bianStr = str(bian)
+	binValues = list(bianStr)
+	for i in range(len(binValues)):
+		print(binValues[i])
 	
 
 def fromBin(a):
-	
+	decNo = 0
+
+	aa = str(a)
+	binNo = list(aa)
+
+	for i in range(len(binNo)):
+		if binNo[i] == 1:
+			decNo = decNo + 1 * (2^(len(binNo) - i))
+		else:
+			decNo = decNo + 0 * (2^(len(binNo) - i))
+	print(decNo)
+	return(decNo)
 
 
 if operation == "+":
@@ -59,7 +75,7 @@ elif operation == "toBin":
 	total = toBin(num1)
 	print("")
 	print(f"				>>>>	Answer: {total} <<<<")
-elif operation == "-":
+elif operation == "fromBin":
 	total = fromBin(num1)
 	print("")
 	print(f"				>>>>	Answer: {total} <<<<")
