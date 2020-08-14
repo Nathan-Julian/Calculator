@@ -62,9 +62,14 @@ while True:
 	txtStage = 1
 	calcTxt1 = font1.render('This is a calculator program.', True, (0, 0, 0))
 	calcTxt2 = font2.render('Enter mode. console or screen.', True, (0, 0, 0))
+	edTxt1 = font2.render("", True, (0, 0, 0))
 	if txtStage == 1:
 		screen.blit(calcTxt1, (50, height / 4))
 		screen.blit(calcTxt2, (200, 400))
+		screen.blit(edTxt1, (200, 500))
+		edTxt1Rect = edTxt1.get_rect()
+		edTxt1Rect.topleft = (20, 20)
+		edTxt1Cursor = Rect(edTxt1Rect.topright, (3,  #left off hereedTxt1Rect.height))
 		pygame.display.flip() # move back to bottom of loop once you are displaying text
 	for i in range(5):
 		print("")
