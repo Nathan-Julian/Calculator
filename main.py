@@ -32,9 +32,12 @@ def toBin(a):
 	bian = bin(a)
 	bianStr = str(bian)
 	binValues = list(bianStr)
-	for i in range(len(binValues)):
-		print(binValues[i])
-	
+	binValues.pop(0)
+	binValues.pop(0)
+	ansStr = "".join(binValues)
+	#for i in range(len(binValues)):
+	#	print(binValues[i], end="")
+	return ansStr
 
 def fromBin(a):
 	decNo = 0
@@ -43,12 +46,9 @@ def fromBin(a):
 	binNo = list(aa)
 
 	for i in range(len(binNo)):
-		if binNo[i] == 1:
-			decNo = decNo + 1 * (2^(len(binNo) - i))
-		else:
-			decNo = decNo + 0 * (2^(len(binNo) - i))
-	print(decNo)
-	return(decNo)
+		if binNo[i] == "1":
+			decNo = decNo + 1 * 2 ** (len(binNo) - (i+1))
+	return decNo
 
 
 if operation == "+":
@@ -58,24 +58,24 @@ if operation == "+":
 elif operation == "-":
 	total = subtract(num1,num2)
 	print("")
-	print(f"				>>>>	Answer: {total} <<<<")
+	print(f"				>>>> Answer: {total} <<<<")
 elif operation == "/":
 	total = divide(num1,num2)
 	print("")
-	print(f"				>>>>	Answer: {total} <<<<")
+	print(f"				>>>> Answer: {total} <<<<")
 elif operation == "*":
 	total = multiply(num1,num2)
 	print("")
-	print(f"				>>>>	Answer: {total} <<<<")
+	print(f"				>>>> Answer: {total} <<<<")
 elif operation == "^":
 	total = exp(num1,num2)
 	print("")
-	print(f"				>>>>	Answer: {total} <<<<")
+	print(f"				>>>> Answer: {total} <<<<")
 elif operation == "toBin":
 	total = toBin(num1)
 	print("")
-	print(f"				>>>>	Answer: {total} <<<<")
+	print(f"				>>>> Answer: {total} <<<<")
 elif operation == "fromBin":
 	total = fromBin(num1)
 	print("")
-	print(f"				>>>>	Answer: {total} <<<<")
+	print(f"				>>>> Answer: {total} <<<<")
