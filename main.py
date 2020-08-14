@@ -8,7 +8,7 @@ for i in range(5):
 print("This is a calculator program.")
 num1 = input("Enter the first number: ")
 num1 = int(num1)
-operation = input("Enter the operator(* is multiply, / is divide, + is add, - is subtract, ^ is exponent): ")
+operation = input("Enter the operator(* is multiply, / is divide, + is add, - is subtract, ^ is exponent, toBin, fromBin are binary conversions): ")
 if not(operation == "toBin" or operation == "fromBin"):
 	num2 = input("Enter the second number: ")
 	num2 = int(num2)
